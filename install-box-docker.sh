@@ -9,6 +9,7 @@ git clone  git@smarthomedevs.work:box/box.git
 git clone  git@smarthomedevs.work:box/box-checkout-api.git
 git clone  git@smarthomedevs.work:nameless/framework.git
 git clone  git@smarthomedevs.work:box/box-front-proxy.git
+git clone git@smarthomedevs.work:box/box-api.git
 
 #новая ветка
 git clone git@smarthomedevs.work:box/box-merchant-api.git
@@ -16,6 +17,7 @@ git clone git@smarthomedevs.work:box/box-merchant-api.git
 cd ~/box-docker/box-deploy/box
 git submodule update --recursive --init
 
+# Директория box должна лежать в каждой ветке кроме framework.
 # остановить mysql потому, что контейнер с mysql работает на порту 3306
 sudo service mysql stop
 
@@ -25,7 +27,7 @@ cd ~/box-docker/
 
 # запустить build ключ h прописывает домены с локальным ip в /etc/hosts
 cd ~/box-docker/box-deploy/
-./docker.sh build && ./docker.sh tag && ./docker.sh tag_release && sudo ./local_install.sh -ilDxCh
+./docker.sh build && ./docker.sh tag && ./docker.sh tag_release && sudo ./local_install.sh -ilDAxh
 
 # Done.
 # Available domains:

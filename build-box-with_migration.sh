@@ -5,10 +5,10 @@ if [[ $# -eq 0  ]]; then
 
 cd ~/box-docker/box-deploy/
 # build with migrationd
-sudo rm -rf mysql_data/* && ./docker.sh build && ./docker.sh tag && ./docker.sh tag_release && ./local_install.sh -ilDCx
+sudo rm -rf mysql_data/* && ./docker.sh build && ./docker.sh tag && ./docker.sh tag_release && ./local_install.sh -ilDxA
     
 # build without migration
-# ./docker.sh build && ./docker.sh tag && ./docker.sh tag_release &&  ./local_install.sh -ix
+# ./docker.sh build && ./docker.sh tag && ./docker.sh tag_release &&  ./local_install.sh -ilDxA
 
 elif [[ "$1" == "--help" ]]; then
     usage     
